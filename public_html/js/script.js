@@ -3,7 +3,7 @@ function showem(){
     
     document.getElementById("wrapper").remove();
     loadel("views/weep.html","container");
-    loadel("views/header.html","header");
+    //loadel("views/header.html","header");
     
 }
 
@@ -16,4 +16,24 @@ function loadel(path,id) {
       console.log(html);
   }).catch((error)=>{ console.log(error)});
 
+}
+
+function dropDownNav() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+function navSwitch(page){
+
+    switch(page){
+    case "contact":
+	loadel("views/contact.html","container");
+	break;
+
+    }
+    
 }
