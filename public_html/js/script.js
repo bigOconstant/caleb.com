@@ -3,7 +3,6 @@ function showem(){
     
     document.getElementById("wrapper").remove();
     loadel("views/weep.html","container");
-    //loadel("views/header.html","header");
     
 }
 
@@ -12,10 +11,11 @@ function loadel(path,id) {
 	.then((response) => response.text())
   .then(function(html) {
       document.getElementById(id).innerHTML = html;
-      console.log("Html")
-      console.log(html);
   }).catch((error)=>{ console.log(error)});
 
+}
+function loadinitialel(path,id){
+    return fetch(path);
 }
 
 function dropDownNav() {
@@ -31,31 +31,37 @@ function navSwitch(page){
 
     switch(page){
     case "contact":
-	loadel("views/contact.html","container");
-	break;
+        loadel("views/contact.html","container");
+	    break;
     case "about":
-	loadel("views/weep.html","container")
-
+	    loadel("views/weep.html","container");
+        break;
+    case "home":
+        loadel("views/home.html","container");
+        break;
+    
+    case "projects" :
+        loadel("views/projects.html","container");
+        break;
     }
+
     switchActive(page);
     
 }
 
 function switchActive(page) {
+    window.localStorage.setItem("page",page);
     var nav = document.getElementById("myTopnav");
     var children = nav.children;
 
     for(var i = 0; i < children.length; i++) {
 	var child = children[i];
 	if (child.classList.contains("active")){
-	    console.log("Removeing active");
 	    child.classList.remove("active");
 	}
 	if(child.classList.contains(page)){
-	    console.log("Adding active");
 	    child.classList.add("active");
 	}
-	console.log(child);
     }
     
 }
