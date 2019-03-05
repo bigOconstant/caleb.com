@@ -14,6 +14,8 @@ if (pageobj == null){
 
 }).catch((error)=>{ console.log(error)});
 
+console.log("You can just download the source here https://github.com/camccar/caleb.com");
+
 
 
 
