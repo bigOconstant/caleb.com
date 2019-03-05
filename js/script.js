@@ -6,6 +6,11 @@ function showem(){
     
 }
 
+function laughem(){
+    var buttonel = document.getElementById("wrapper");
+    buttonel.innerHTML = "<p align='center' style='color:#e0e0e0'> You can't</p>";
+}
+
 function loadel(path,id) {
    fetch(path)
 	.then((response) => response.text())
