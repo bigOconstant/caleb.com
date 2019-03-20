@@ -48,8 +48,11 @@ function navSwitch(page){
     case "projects" :
         loadel("views/projects.html","container");
         break;
+    
+    case "blog":
+	loadel("views/blog.html","container");
+	break;
     }
-
     switchActive(page);
     
 }
@@ -68,5 +71,25 @@ function switchActive(page) {
 	    child.classList.add("active");
 	}
     }
+
+    console.log("page = "+getFragment());
     
+}
+
+function getFragment() {
+    var fragment = '';
+    if(this.mode === 'history') {
+        fragment = this.clearSlashes(decodeURI(location.pathname + location.search));
+        fragment = fragment.replace(/\?(.*)$/, '');
+        fragment = this.root != '/' ? fragment.replace(this.root, '') : fragment;
+    } else {
+        var match = window.location.href.match(/#(.*)$/);
+        fragment = match ? match[1] : '';
+    }
+    return clearSlashes(fragment);
+}
+
+
+function clearSlashes(path) {
+    return path.toString().replace(/\/$/, '').replace(/^\//, '');
 }
