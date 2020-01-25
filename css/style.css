@@ -82,23 +82,7 @@ label{
     font-size: 18px;
 }
 
-pre {
-    background: #808182;
-    border: 1px solid #ddd;
-    border-left: 3px solid #1f9423;
-    color: #333131;
-    page-break-inside: avoid;
-    font-family: monospace;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 1.6em;
-    max-width: 800px;
-    overflow: auto;
-    padding: 1em 1.5em;
-    display: block;
-    word-wrap: break-word;
-    margin: auto;
-}
+
 .project-link{
     color:#e0e0e0;
 }
@@ -122,4 +106,9 @@ pre {
     margin-left: 10px;
     margin-right: 10px;
   height: 50px;
+}
+
+.blog-page{
+    max-width: 1000px;
+    margin: 0 auto;
 }
