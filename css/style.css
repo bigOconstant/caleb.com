@@ -126,7 +126,7 @@ label{
 
 #window-parent{
     display: flex;
-    max-width: 800px;
+    max-width: 600px;
     margin:auto;
 }
 
